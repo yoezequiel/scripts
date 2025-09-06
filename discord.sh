@@ -7,7 +7,7 @@ CYAN='\033[0;36m'
 NC='\033[0m'
 
 echo -e "${CYAN}Obteniendo la versión actual de Discord...${NC}"
-version=$(timeout 0.5 discord --version | head -n 1 | grep -oP '\d+\.\d+\.\d+' 2>/dev/null)
+version=$(timeout 1 discord --version | head -n 1 | grep -oP '\d+\.\d+\.\d+' 2>/dev/null)
 
 if [ -z "$version" ]; then
   echo -e "${RED}Error: No se pudo obtener la versión de Discord.${NC}"
